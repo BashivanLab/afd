@@ -13,6 +13,7 @@ python afd_train.py --dataset=cifar10 --enc_model=resnet18norm --save_path=[SAVE
 
 ### Model checkpoints: 
 Download the pretrained models from the links below: 
+
 [MNIST-checkpoint](https://drive.google.com/file/d/1-6bylNZ9ZgZ3DvwcRJ1nNCLbXDiw9E1D/view?usp=sharing)
 
 [CIFAR10-checkpoint](https://drive.google.com/file/d/1---psLlEd9N4Kv13bpfQoNHnMOdtXbkc/view?usp=sharing)
