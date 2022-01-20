@@ -12,7 +12,6 @@ import torch.optim as optim
 import torchvision.datasets as datasets
 import torchvision.transforms as transforms
 from advertorch.attacks import LinfPGDAttack, CarliniWagnerL2Attack
-from attacks.deepfool import DeepfoolLinfAttack
 from autoattack import AutoAttack
 
 import models.mnist_models as mnist_models
@@ -65,11 +64,6 @@ def get_attack(model, attack_name, dataset):
         model, loss_fn=nn.CrossEntropyLoss(reduction="sum"), eps=0.3,
         nb_iter=40, eps_iter=0.01, rand_init=True, clip_min=0.0,
         clip_max=1.0, targeted=False)
-
-    elif attack_name == 'linf_deepfool':
-      return DeepfoolLinfAttack(
-        model, num_classes=10, nb_iter=40, eps=0.3, clip_min=0.0, clip_max=1.0)
-
     elif attack_name == 'cw':
       return CarliniWagnerL2Attack(
         model, num_classes=10, max_iterations=20, learning_rate=0.1,
